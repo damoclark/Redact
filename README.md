@@ -10,7 +10,7 @@ It could be made a little more sophisticated and extensible with external json s
 
 ## Installation Instructions
 
-If you don't have The Moodle Activity Viewer (MAV) installed in your Firefox browser, then firstly [Install Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) into your Firefox.
+If you don't have The [Moodle Activity Viewer (MAV)](https://github.com/damoclark/mav-enterprise) installed in your Firefox browser, then firstly [Install Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) into your Firefox.
 
 Then [install Redact](https://raw.githubusercontent.com/damoclark/Redact/cqu/Redact.user.js).
 
