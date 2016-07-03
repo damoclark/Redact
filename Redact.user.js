@@ -3,6 +3,7 @@
 // @namespace   https://damos.world
 // @description Redact parts of a web page for privacy such as live demos
 // @grant       GM_addStyle
+// @include     http://moodle*/
 // @run-at      document-start
 // @version     1.0.0
 // ==/UserScript==
