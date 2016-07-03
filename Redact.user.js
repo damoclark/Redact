@@ -70,7 +70,7 @@ try
 
     console.log("Setting page visible") ;
     window.document.getElementsByTagName("body")[0].style.visibility = "visible" ;
-  }
+  } ;
 
   addEventListener('DOMContentLoaded', func, false);
 }
