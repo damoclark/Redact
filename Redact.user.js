@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Redact
-// @namespace   http://damos.world
-// @description Redact parts of a web page for privacy such as live demos
+// @namespace   https://damos.world
+// @description Redact parts of CQU web pages for privacy such as live demos
 // @include     https://moodle.cqu.edu.au/*
 // @include     http://moodle-archive-2014.cqu.edu.au/*
 // @include     https://indicators.cqu.edu.au/easi/*
