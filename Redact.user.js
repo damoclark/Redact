@@ -10,7 +10,7 @@
 // @include     https://handbook.cqu.edu.au/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     1.0.2
+// @version     1.0.3
 // ==/UserScript==
 
 try
