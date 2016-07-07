@@ -3,6 +3,7 @@
 // @namespace   https://damos.world
 // @description Redact parts of CQU web pages for privacy such as live demos
 // @include     https://moodle.cqu.edu.au/*
+// @include     https://moodle-vet.cqu.edu.au/*
 // @include     https://moodle-sandpit.cqu.edu.au/*
 // @include     http://moodle-archive-2014.cqu.edu.au/*
 // @include     https://indicators.cqu.edu.au/easi/*
