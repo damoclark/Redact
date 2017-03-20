@@ -10,7 +10,7 @@
 // @include     https://handbook.cqu.edu.au/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     1.0.3
+// @version     1.0.4
 // ==/UserScript==
 
 try
@@ -44,7 +44,7 @@ try
         //EASI Integration
         'span[id=ui-id-1].ui-dialog-title',
         //EASI System
-        'a[href*="/students/studentDetail/"]',
+        'a[href*="/student/students/detail/"]',
         'div#nudgeLog h3',
         'input#emailTo',
         //Handbook System
