@@ -10,7 +10,7 @@
 // @include     https://handbook.cqu.edu.au/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     1.0.4
+// @version     1.0.5
 // ==/UserScript==
 
 try
@@ -47,6 +47,7 @@ try
         'a[href*="/student/students/detail/"]',
         'div#nudgeLog h3',
         'input#emailTo',
+        'span#previewEmailTo',
         //Handbook System
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(1) th', /*student name*/
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(2) td:nth-child(2)', /*student number*/
