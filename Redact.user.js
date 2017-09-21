@@ -7,10 +7,10 @@
 // @include     https://moodle-sandpit.cqu.edu.au/*
 // @include     http://moodle-archive-2014.cqu.edu.au/*
 // @include     https://indicators.cqu.edu.au/easi/*
-// @include     https://handbook.cqu.edu.au/*
+// @include     https://aims.cqu.edu.au/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     1.0.5
+// @version     1.0.6
 // ==/UserScript==
 
 try
