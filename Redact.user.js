@@ -3,15 +3,17 @@
 // @namespace   https://damos.world
 // @description Redact parts of a web page for privacy such as live demos
 // @grant       GM_addStyle
+// @grant       GM.addStyle
+// @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @include     http://moodle*/
 // @run-at      document-start
-// @version     1.0.2
+// @version     1.1.0
 // ==/UserScript==
 
 try
 {
   console.log("Hiding body") ;
-  GM_addStyle("body {visibility: hidden;}") ;
+  GM.addStyle("body {visibility: hidden;}") ;
   console.log("Body hidden") ;
 
   var func = function()
@@ -47,11 +49,11 @@ try
       ] ;
 
       console.log("Redacting text") ;
-      GM_addStyle(redact_text.join()+' {color: transparent !important; text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px !important;}') ;
+      GM.addStyle(redact_text.join()+' {color: transparent !important; text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px !important;}') ;
       console.log("Text Redacted") ;
 
       console.log("Redacting Images") ;
-      GM_addStyle(redact_image.join()+' {filter: blur(10px) !important;}') ;
+      GM.addStyle(redact_image.join()+' {filter: blur(10px) !important;}') ;
       console.log("Images Redacted") ;
 
       console.log("Removing title and alt attributes") ;
