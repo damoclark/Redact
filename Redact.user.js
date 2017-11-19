@@ -7,7 +7,7 @@
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @include     http://moodle*/
 // @run-at      document-start
-// @version     1.1.0
+// @version     1.1.1
 // ==/UserScript==
 
 try
@@ -23,7 +23,7 @@ try
 	  //Moodle LMS CSS for redaction
       var redact_text = 
       [
-        '.useridnumber, .useremail, .idnumber, .email, .subfield_firstname, .subfield_idnumber, .subfield_email',
+        '.useridnumber, .useremail, .idnumber, .email, .subfield_firstname, .subfield_idnumber, .subfield_email, .subfield_userfullnamedisplay',
         'a[href*="/user/view.php"]',
         'a[href*="/assignsubmission_file/"]',
         'td[id^="mod-quiz-report-overview-report"].cell.c3',
