@@ -1,30 +1,19 @@
 # Redact
 
-**Firefox utility to redact parts of CQU web pages for student privacy such as during live demos**
+**Mozilla Firefox and Google Chrome utility to redact parts of CQU web pages for student privacy such as during live demos**
 
-The utility is specifically for CQUniversity systems including [Moodle](https://moodle.org/), EASICONNECT and CQU Student Handbook. It will hide personal details of students during live demonstrations or screencast recordings.  The utility is incomplete so test your pages before your presentation.
+The utility is specifically for CQUniversity systems including [Moodle](https://moodle.org/), EASICONNECT and AIMS. It will hide personal details of students during live demonstrations or screencast recordings.  The utility is incomplete so test your pages before your presentation.
 
 If you are looking to customise Redact for your own requirements, [a more generic branch](https://github.com/damoclark/Redact) is available in this repository. 
 
-It could be made a little more sophisticated and extensible with external json sources providing the css selectors for redacting.  Contributions welcome.
+## Installation and Usage
 
-## Installation Instructions
+There are separate instructions for:
+- [Mozilla Firefox](Firefox-Installation-Instructions.md "Firefox Installation Instructions")
+- [Google Chrome](Chrome-Installation-Instructions.md "Google Chrome Installation Instructions")
 
-If you don't have The [Moodle Activity Viewer (MAV)](https://github.com/damoclark/mav-enterprise) installed in your Firefox browser, then firstly [Install Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) into your Firefox.
-
-Then [install Redact](https://raw.githubusercontent.com/damoclark/Redact/cqu/Redact.user.js).
-
-## Usage
-
-Enable it in the Greasemonkey Add-ons UI when you want to redact, and disable when not.
-
-Press Ctrl-Shift-A to access the settings (Cmd-Shift-A for Mac)
-
-![Greasemonkey Scripts](https://raw.githubusercontent.com/damoclark/Redact/cqu/Firefox_Add-ons_Manager.png "Access Greasemonkey Scripts")
-![Enable or Disable](https://raw.githubusercontent.com/damoclark/Redact/cqu/Enable_Redact.png "Enable or Disable Redact")
-
-## Licence 
-Copyright (c) 2016 Damien Clark<br/>
+## Licence
+Copyright (c) 2016-2018 Damien Clark<br/>
 
 Licenced under the terms of the [GPLv3](https://www.gnu.org/licenses/gpl.txt)<br/>
 ![GPLv3](https://www.gnu.org/graphics/gplv3-127x51.png "GPLv3")
