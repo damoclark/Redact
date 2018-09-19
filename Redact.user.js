@@ -8,11 +8,13 @@
 // @include     http://moodle-archive-2014.cqu.edu.au/*
 // @include     https://indicators.cqu.edu.au/easi/*
 // @include     https://aims.cqu.edu.au/*
+// @include     https://ltsdev.cqu.edu.au/schedule/*
+// @include     http://localhost:3000/*
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @grant       GM_addStyle
 // @grant       GM.addStyle
 // @run-at      document-start
-// @version     1.1.0
+// @version     1.1.1
 // ==/UserScript==
 
 try
@@ -60,7 +62,9 @@ try
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(7) td:nth-child(2)', /*phone*/
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(8) td:nth-child(2)', /*phone*/
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(9) td:nth-child(2)', /*address*/
-        'a[href^="mailto:"]'
+        'a[href^="mailto:"]',
+        //Any CQU products with redaction built in for this userscript (such as Assessment Schedule Prototype)
+        '.redact' /*fields with personal data to be hidden have this class*/
       ] ;
 
       var redact_image =
