@@ -3,10 +3,11 @@
 // @namespace   https://damos.world
 // @description Redact parts of CQU web pages for privacy such as live demos
 // @include     https://moodle.cqu.edu.au/*
+// @include     https://bedifferent.cqu.edu.au/*
+// @include     https://cpd.cqu.edu.au/*
 // @include     https://moodle-vet.cqu.edu.au/*
 // @include     https://moodle-sandpit.cqu.edu.au/*
 // @include     http://moodle-archive-2014.cqu.edu.au/*
-// @include     https://indicators.cqu.edu.au/easi/*
 // @include     https://aims.cqu.edu.au/*
 // @include     https://ltsdev.cqu.edu.au/schedule/*
 // @include     http://localhost:3000/*
@@ -14,7 +15,7 @@
 // @grant       GM_addStyle
 // @grant       GM.addStyle
 // @run-at      document-start
-// @version     1.1.1
+// @version     1.2.0
 // ==/UserScript==
 
 try
