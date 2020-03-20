@@ -1,6 +1,6 @@
 ## Chrome Installation Instructions
 
-1. Install CQUniversity’s Moodle Activity Viewer (MAV) from the  [MAV Install Page](https://indicators.cqu.edu.au/mav/ "Moodle Activity Viewer").  
+1. Install Tampermonkey from the [Chrome Web Store](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "Greasemonkey").  
 2. Next, [install Redact](https://raw.githubusercontent.com/damoclark/Redact/cqu/Redact.user.js).
 
 And the installation is done!
