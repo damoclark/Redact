@@ -4,22 +4,30 @@
 // @description Redact parts of CQU web pages for privacy such as live demos
 // @include     https://moodle.cqu.edu.au/*
 // @include     https://bedifferent.cqu.edu.au/*
+// @include     https://staging-bedifferent.catalyst-au.net/*
 // @include     https://cpd.cqu.edu.au/*
 // @include     https://moodle-vet.cqu.edu.au/*
 // @include     https://moodle-sandpit.cqu.edu.au/*
 // @include     http://moodle-archive-2014.cqu.edu.au/*
 // @include     https://aims.cqu.edu.au/*
 // @include     https://ltsdev.cqu.edu.au/schedule/*
+// @include     https://test.oras.app/*
+// @include     https://oras.app/*
 // @include     http://localhost:3000/*
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @grant       GM_addStyle
 // @grant       GM.addStyle
 // @run-at      document-start
-// @version     1.2.0
+// @version     1.2.1
 // ==/UserScript==
 
 try
 {
+  // if ('loading' == document.readyState) {
+  //   console.log("This script is running at document-start time.");
+  // } else {
+  //   console.log("This script is running with document.readyState: " + document.readyState);
+  // }
   console.log("Hiding body") ;
   GM.addStyle("body {visibility: hidden;}") ;
   console.log("Body hidden") ;
@@ -28,9 +36,10 @@ try
   {
     try
     {
-      var redact_text = 
+      var redact_text =
       [
-        '.useridnumber, .useremail, .idnumber, .email, .subfield_firstname, .subfield_idnumber, .subfield_email, .subfield_userfullnamedisplay',
+        //Moodle
+        '.useridnumber, .useremail, .idnumber, .email, .subfield_firstname, .subfield_idnumber, .subfield_email, .subfield_userfullnamedisplay, .usertext',
         'a[href*="/user/view.php"]',
         'a[href*="/assignsubmission_file/"]',
         'td[id^="mod-quiz-report-overview-report"].cell.c3',
@@ -71,11 +80,12 @@ try
       var redact_image =
       [
         '.userpicture',
+        'img[src*="secure.gravatar.com/avatar"]',
         'img[src*="studentphoto.cqu.edu.au"]' /*handbook photo*/
       ] ;
 
       console.log("Redacting text") ;
-      GM.addStyle(redact_text.join()+' {color: transparent !important; text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px !important;}') ;
+      GM.addStyle(redact_text.join()+' {color: transparent !important; text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px !important;}') ;
       console.log("Text Redacted") ;
 
       console.log("Redacting Images") ;
