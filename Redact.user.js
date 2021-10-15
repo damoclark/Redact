@@ -14,11 +14,12 @@
 // @include     https://test.oras.app/*
 // @include     https://oras.app/*
 // @include     http://localhost:3000/*
+// @include     https://localhost:8000/*
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @grant       GM_addStyle
 // @grant       GM.addStyle
 // @run-at      document-start
-// @version     1.2.1
+// @version     1.2.2
 // ==/UserScript==
 
 try
@@ -30,6 +31,7 @@ try
   // }
   console.log("Hiding body") ;
   GM.addStyle("body {visibility: hidden;}") ;
+  window.document.body.classList.add("redacted");
   console.log("Body hidden") ;
 
   var func = function()
