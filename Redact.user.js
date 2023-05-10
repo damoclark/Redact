@@ -19,7 +19,7 @@
 // @grant       GM_addStyle
 // @grant       GM.addStyle
 // @run-at      document-start
-// @version     1.2.2
+// @version     1.2.3
 // ==/UserScript==
 
 try
@@ -30,8 +30,7 @@ try
   //   console.log("This script is running with document.readyState: " + document.readyState);
   // }
   console.log("Hiding body") ;
-  GM.addStyle("body {visibility: hidden;}") ;
-  window.document.body.classList.add("redacted");
+  GM.addStyle("body {visibility: hidden; !important;}") ;
   console.log("Body hidden") ;
 
   var func = function()
@@ -40,7 +39,10 @@ try
     {
       var redact_text =
       [
+        //Bedifferent
+        'div#block-welcome h1 > span',
         //Moodle
+        '.author-info', // Discussion forums
         '.useridnumber, .useremail, .idnumber, .email, .subfield_firstname, .subfield_idnumber, .subfield_email, .subfield_userfullnamedisplay, .usertext',
         'a[href*="/user/view.php"]',
         'a[href*="/assignsubmission_file/"]',
@@ -57,13 +59,6 @@ try
         'table.studentAccess tbody tr td:nth-child(1), table.studentAccess tbody tr td:nth-child(2), table.studentAccess tbody tr td:nth-child(3)',
         //OU Blog
         'div.oublog-post-editsummary',
-        //EASI Integration
-        'span[id=ui-id-1].ui-dialog-title',
-        //EASI System
-        'a[href*="/student/students/detail/"]',
-        'div#nudgeLog h3',
-        'input#emailTo',
-        'span#previewEmailTo',
         //Handbook System
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(1) th', /*student name*/
         'div#studentResultsArea div.tab-content div#cqucentral div#studentResultsArea table tbody tr:nth-child(2) td:nth-child(2)', /*student number*/
@@ -83,7 +78,15 @@ try
       [
         '.userpicture',
         'img[src*="secure.gravatar.com/avatar"]',
-        'img[src*="studentphoto.cqu.edu.au"]' /*handbook photo*/
+        'img[src*="studentphoto.cqu.edu.au"]', /*handbook photo*/
+        // Moodle
+        'img[src*="/pluginfile.php/"][src*="/user/icon"]' // Discussion thread avatar
+      ] ;
+
+      var alt_text =
+      [
+        '*[title^="Picture of "]',
+        '*[alt^="Picture of "]'
       ] ;
 
       console.log("Redacting text") ;
@@ -95,18 +98,21 @@ try
       console.log("Images Redacted") ;
 
       console.log("Removing title and alt attributes") ;
-      redact_text.concat(redact_image).forEach(function(s)
+      redact_text.concat(redact_image,alt_text).forEach(function(s)
       {
-				var nodes = document.querySelectorAll(s) ;
-				for(var i=0; i<nodes.length; i++)
-				{
-					nodes[i].removeAttribute('title') ;
-					nodes[i].removeAttribute('alt') ;
-				}
+        // console.debug("Removing titles for %s",s);
+        var nodes = document.querySelectorAll(s) ;
+        for(var i=0; i<nodes.length; i++)
+        {
+          nodes[i].removeAttribute('title') ;
+          nodes[i].removeAttribute('alt') ;
+        }
       }) ;
 
-      console.log("Setting page visible") ;
-      window.document.getElementsByTagName("body")[0].style.visibility = "visible" ;
+      window.addEventListener('load', function () {
+        console.log("Setting page visible") ;
+        window.document.getElementsByTagName("body")[0].style.visibility = "visible" ;
+      });
     }
     catch(err)
     {
