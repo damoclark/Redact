@@ -5,9 +5,6 @@
 // @include     https://moodle.cqu.edu.au/*
 // @include     https://bedifferent.cqu.edu.au/*
 // @include     https://staging-bedifferent.catalyst-au.net/*
-// @include     https://cpd.cqu.edu.au/*
-// @include     https://moodle-vet.cqu.edu.au/*
-// @include     https://moodle-sandpit.cqu.edu.au/*
 // @include     http://moodle-archive-2014.cqu.edu.au/*
 // @include     https://aims.cqu.edu.au/*
 // @include     https://ltsdev.cqu.edu.au/schedule/*
@@ -15,11 +12,12 @@
 // @include     https://oras.app/*
 // @include     http://localhost:3000/*
 // @include     https://localhost:8000/*
+// @include     https://moodle-dev.cqu.edu.au/*
 // @require     https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @grant       GM_addStyle
 // @grant       GM.addStyle
 // @run-at      document-start
-// @version     1.2.3
+// @version     1.2.8
 // ==/UserScript==
 
 try
@@ -41,6 +39,10 @@ try
       [
         //Bedifferent
         'div#block-welcome h1 > span',
+        //Moodle 4.1 (Gradebook)
+        '.fullname',
+        //Moodle 4.1 (Participants) icon with initials instead of photo
+        '.userinitials',
         //Moodle
         '.author-info', // Discussion forums
         '.useridnumber, .useremail, .idnumber, .email, .subfield_firstname, .subfield_idnumber, .subfield_email, .subfield_userfullnamedisplay, .usertext',
@@ -53,7 +55,10 @@ try
         'select[name=userid] option',
         'optgroup[label^="Student"] option, optgroup[label^="No roles"] option',
         'table#completion-progress tbody tr td:nth-child(2), table#completion-progress tbody tr td:nth-child(3)',
-        'table#participants tbody tr td:nth-child(4), table#participants tbody tr td:nth-child(5)',
+        // M4.1 /user/index.php?id=
+        'table#participants tbody tr td:nth-child(3), table#participants tbody tr td:nth-child(4)',
+        // M3.9 /user/index.php?id=
+        // 'table#participants tbody tr td:nth-child(4), table#participants tbody tr td:nth-child(5)',
         'span.ui-id-1',
         'table.studentInfo tbody tr:nth-child(3) td',
         'table.studentAccess tbody tr td:nth-child(1), table.studentAccess tbody tr td:nth-child(2), table.studentAccess tbody tr td:nth-child(3)',
@@ -86,6 +91,7 @@ try
       var alt_text =
       [
         '*[title^="Picture of "]',
+        '*[title$=" role assignments"]', //Moodle 4.1 Participants /user/index.php?id=
         '*[alt^="Picture of "]'
       ] ;
 
@@ -112,6 +118,9 @@ try
       window.addEventListener('load', function () {
         console.log("Setting page visible") ;
         window.document.getElementsByTagName("body")[0].style.visibility = "visible" ;
+        window.setTimeout(() => window.document.getElementsByTagName("body")[0].style.visibility = "visible",500) ;
+        console.log("Page set visible") ;
+
       });
     }
     catch(err)
